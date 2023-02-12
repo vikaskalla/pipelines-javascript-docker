@@ -64,7 +64,7 @@ stages:
                 kubernetesServiceConnection: 'myapp-default'
                 namespace: 'default'
                 secretType: 'dockerRegistry'
-                secretName: '$(imagePullSecret)'
+                secretName: 'test-deploy-secret'
                 dockerRegistryEndpoint: 'dockerResitryAzure'
 
             - task: KubernetesManifest@0
@@ -76,5 +76,5 @@ stages:
                 manifests: |
                   $(System.ArtifactsDirectory)/manifests/deployment.yml
                   $(System.ArtifactsDirectory)/manifests/service.yml
-                containers: '$(containerRegistry)/$(imageRepository):$(tag)'
-                imagePullSecrets: '$(imagePullSecret)'
+                containers: 'dockerResitryAzure/vikaskalla/vikas19containerregistry:$(Build.BuildId)'
+                imagePullSecrets: 'test-deploy-secret'
