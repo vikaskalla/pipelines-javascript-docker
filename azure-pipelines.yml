@@ -64,7 +64,7 @@ stages:
               inputs:
                 action: 'createSecret'
                 kubernetesServiceConnection: 'myapp-default'
-                namespace: '$(k8sNamespace)'
+                namespace: 'default'
                 secretType: 'dockerRegistry'
                 secretName: '$(imagePullSecret)'
                 dockerRegistryEndpoint: 'dockerResitryAzure'
@@ -74,7 +74,7 @@ stages:
               inputs:
                 action: 'deploy'
                 kubernetesServiceConnection: 'myapp-default'
-                namespace: '$(k8sNamespace)'
+                namespace: 'default'
                 manifests: |
                   $(System.ArtifactsDirectory)/manifests/deployment.yml
                   $(System.ArtifactsDirectory)/manifests/service.yml
