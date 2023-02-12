@@ -31,11 +31,12 @@ stages:
       - task: Docker@2
         inputs:
           containerRegistry: 'dockerResitryAzure'
-          repository: 'vikas19containerregistry'
+          repository: 'vikaskalla/vikas19containerregistry'
           command: 'buildAndPush'
           Dockerfile: '**/Dockerfile'
 
       - task: PublishPipelineArtifact@1
         inputs:
-          artifactName: 'manifests'
-          path: 'manifests'
+          targetPath: 'manifests'
+          artifact: 'manifests'
+          publishLocation: 'pipeline'
