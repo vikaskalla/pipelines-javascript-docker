@@ -34,9 +34,3 @@ stages:
           repository: 'vikaskalla/vikas19containerregistry'
           command: 'buildAndPush'
           Dockerfile: '**/Dockerfile'
-
-      - task: PublishPipelineArtifact@1
-        inputs:
-          targetPath: 'manifests'
-          artifact: 'manifests'
-          publishLocation: 'pipeline'
