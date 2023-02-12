@@ -15,8 +15,7 @@ stages:
     jobs:  
     - job: Build
       displayName: Build job
-      pool:
-        vmImage: $(vmImageName)
+      
       steps:
       - script: echo Hello, world!
         displayName: 'Run a one-line script'
