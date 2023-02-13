@@ -76,5 +76,5 @@ stages:
                 manifests: |
                   $(System.ArtifactsDirectory)/manifests/deployment.yml
                   $(System.ArtifactsDirectory)/manifests/service.yml
-                containers: 'dockerresitryazure/vikaskalla/testkubernetesdemo:$(Build.BuildId)'
+                containers: 'vikaskalla/testkubernetesdemo:$(Build.BuildId)'
                 imagePullSecrets: 'test-deploy-secret'
