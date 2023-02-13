@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: testkubernetesdemo
-          image: dockerresitryazure/vikaskalla/testkubernetesdemo:$(Build.BuildId)
+          image: vikaskalla/testkubernetesdemo:$(Build.BuildId)
           ports:
             - containerPort: 8080
