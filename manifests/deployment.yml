@@ -13,7 +13,7 @@ spec:
         app: myapp-demo
     spec:
       containers:
-        - name: vikas19containerregistry
-          image: dockerResitryAzure/vikaskalla/vikas19containerregistry:$(Build.BuildId)
+        - name: testkubernetesdemo
+          image: dockerresitryazure/vikaskalla/testkubernetesdemo:$(Build.BuildId)
           ports:
             - containerPort: 8080
