@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: {{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}}
+  name: myapp-demo
     spec:
       replicas: 1
       selector:
         matchLabels:
-          app: {{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}}
+          app: myapp-demo
             template:
               metadata:
                 labels:
-                  app: {{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}}
+                  app: myapp-demo
                     spec:
                       containers:
-                        - name: {{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}}
-                          image: {{ containerRegistryConnection.Authorization.Parameters.loginServer }}/{{#toAlphaNumericString imageRepository 50}}{{/toAlphaNumericString}}
+                        - name: firstImage
+                          image: dockerResitryAzure/vikaskalla/vikas19containerregistry:$(Build.BuildId)
                             ports:
                               - containerPort: {{ servicePort }}
