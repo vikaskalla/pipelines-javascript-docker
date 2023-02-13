@@ -65,7 +65,7 @@ stages:
                 namespace: 'default'
                 secretType: 'dockerRegistry'
                 secretName: 'test-deploy-secret'
-                dockerRegistryEndpoint: 'dockerResitryAzure'
+                dockerRegistryEndpoint: 'dockerresitryazure'
 
             - task: KubernetesManifest@0
               displayName: Deploy to Kubernetes cluster
