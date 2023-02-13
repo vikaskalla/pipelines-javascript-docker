@@ -2,18 +2,18 @@ apiVersion : apps/v1
 kind: Deployment
 metadata:
   name: myapp-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp-demo
+  template:
+    metadata:
+      labels:
+        app: myapp-demo
     spec:
-      replicas: 1
-      selector:
-        matchLabels:
-          app: myapp-demo
-            template:
-              metadata:
-                labels:
-                  app: myapp-demo
-                    spec:
-                      containers:
-                        - name: firstImage
-                          image: dockerResitryAzure/vikaskalla/vikas19containerregistry:$(Build.BuildId)
-                            ports:
-                              - containerPort: {{ servicePort }}
+      containers:
+        - name: firstImage
+          image: dockerResitryAzure/vikaskalla/vikas19containerregistry:$(Build.BuildId)
+          ports:
+            - containerPort: 8080
