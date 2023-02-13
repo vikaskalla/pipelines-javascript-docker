@@ -76,5 +76,5 @@ stages:
                 manifests: |
                   $(System.ArtifactsDirectory)/manifests/deployment.yml
                   $(System.ArtifactsDirectory)/manifests/service.yml
-                containers: 'vikas19containerregistry:$(Build.BuildId)'
+                containers: 'dockerResitryAzure/vikaskalla/vikas19containerregistry:latest'
                 imagePullSecrets: 'test-deploy-secret'
