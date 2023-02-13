@@ -13,7 +13,7 @@ spec:
         app: myapp-demo
     spec:
       containers:
-        - name: firstImage
+        - name: vikas19containerregistry
           image: dockerResitryAzure/vikaskalla/vikas19containerregistry:$(Build.BuildId)
           ports:
             - containerPort: 8080
